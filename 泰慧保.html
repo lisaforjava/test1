@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)http://localhost:8080/main/index -->
+<html lang="en" style=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!--<base href="http://localhost:8080/">--><base href=".">
+
+	<!-- jsp文件头和头部 -->
+			<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		
+		<title>泰慧保</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+		<!-- bootstrap & fontawesome -->
+		<link rel="stylesheet" href="./泰慧保_files/bootstrap.css">
+		<link rel="stylesheet" href="./泰慧保_files/font-awesome.css">
+
+		<link rel="icon" href="http://localhost:8080/favicon.ico" type="image/x-icon">
+		<link rel="shortcut icon" href="http://localhost:8080/favicon.ico" type="image/x-icon">
+		<link rel="bookmark" href="http://localhost:8080/favicon.ico" type="image/x-icon">
+		<!-- page specific plugin styles -->
+		<!-- text fonts -->
+		<link rel="stylesheet" href="./泰慧保_files/ace-fonts.css">
+		<!-- ace styles -->
+		<link rel="stylesheet" href="./泰慧保_files/ace.css" class="ace-main-stylesheet" id="main-ace-style"><link type="text/css" rel="stylesheet" id="ace-skins-stylesheet" href="./泰慧保_files/ace-skins.css">
+		<!--[if lte IE 9]>
+			<link rel="stylesheet" href="static/ace/css/ace-part2.css" class="ace-main-stylesheet" />
+		<![endif]-->
+		<!--[if lte IE 9]>
+		  <link rel="stylesheet" href="static/ace/css/ace-ie.css" />
+		<![endif]-->
+		<!-- inline styles related to this page -->
+		<!-- ace settings handler -->
+		<script src="./泰慧保_files/hm.js.download"></script><script src="./泰慧保_files/ace-extra.js.download"></script>
+		<!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
+		<!--[if lte IE 8]>
+		<script src="static/ace/js/html5shiv.js"></script>
+		<script src="static/ace/js/respond.js"></script>
+		<![endif]-->
+
+	<style type="text/css">
+	.commitopacity{
+		position:absolute;
+		width:100%;
+		height:100px;
+		background:#7f7f7f;
+		filter:alpha(opacity=50);
+		-moz-opacity:0.8;
+		-khtml-opacity: 0.5;
+		opacity: 0.5;
+		top:0px;
+		z-index:99999;}
+	.jzts{
+		position: fixed;
+	    left: 50%;
+	    top: 50%;
+	    width: 100%;
+	    height: 200px;
+	    margin: -45px 190px 0px 0px;
+	}
+	</style>
+	
+	<!-- 及时通讯css -->
+	<link rel="stylesheet" href="./泰慧保_files/layui.css">
+	<link rel="stylesheet" href="./泰慧保_files/contextMenu.css">
+	
+<link id="layuicss-skinlayimcss" rel="stylesheet" href="./泰慧保_files/layim.css" media="all"><link id="layuicss-layer" rel="stylesheet" href="./泰慧保_files/layer.css" media="all"></head>
+	<body class="no-skin">
+		<!-- #section:basics/navbar.layout -->
+		
+		<!-- 页面顶部¨ -->
+				<div id="navbar" class="navbar navbar-default">
+			<script type="text/javascript">
+				try{ace.settings.check('navbar' , 'fixed');}catch(e){}
+			</script>
+
+			<div class="navbar-container" id="navbar-container">
+				<!-- #section:basics/sidebar.mobile.toggle -->
+				<button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
+					<span class="sr-only">Toggle sidebar</span>
+
+					<span class="icon-bar"></span>
+
+					<span class="icon-bar"></span>
+
+					<span class="icon-bar"></span>
+				</button>
+
+				<!-- /section:basics/sidebar.mobile.toggle -->
+				<div class="navbar-header pull-left">
+					<!-- #section:basics/navbar.layout.brand -->
+					<a class="navbar-brand">
+						<small> <img src="./泰慧保_files/logo_w.png" style="width:23px;height:23px;"> 泰慧保 </small>
+					</a>
+
+					<!-- /section:basics/navbar.layout.brand -->
+
+					<!-- #section:basics/navbar.toggle -->
+
+					<!-- /section:basics/navbar.toggle -->
+				</div>
+
+				<!-- #section:basics/navbar.dropdown -->
+				<div class="navbar-buttons navbar-header pull-right" role="navigation">
+					<ul class="nav ace-nav" style="">
+						<li title="待办任务" class="grey" id="fhtasktss">
+							<a data-toggle="dropdown" class="dropdown-toggle" href="http://localhost:8080/#">
+								<i class="ace-icon fa fa-tasks"></i>
+								<span class="badge badge-grey" id="taskCount">0</span>
+							</a>
+
+							<ul class="dropdown-menu-right dropdown-navbar dropdown-menu dropdown-caret dropdown-close">
+								<li class="dropdown-header">
+									<i class="ace-icon fa fa-check"></i>
+									我的待办任务
+								</li>
+								<li class="dropdown-content ace-scroll" style="position: relative;"><div class="scroll-track" style="display: none;"><div class="scroll-bar"></div></div><div class="scroll-content" style="max-height: 200px;">
+									<ul class="dropdown-menu dropdown-navbar navbar-pink" id="myTask"></ul>
+								</div></li>
+								<li class="dropdown-footer">
+									<a href="javascript:" onclick="rutasklist();">
+										查看我的任务列表
+										<i class="ace-icon fa fa-arrow-right"></i>
+									</a>
+								</li>
+							</ul>
+						</li>
+
+						<li title="即时聊天" class="purple">
+							<a data-toggle="dropdown" class="dropdown-toggle" href="http://localhost:8080/#" id="myIm">
+								<i class="ace-icon fa fa-bell icon-animated-bell"></i>
+								<span class="badge badge-important"></span>
+							</a>
+
+							<ul class="dropdown-menu-right dropdown-navbar navbar-pink dropdown-menu dropdown-caret dropdown-close">
+								<li class="dropdown-header">
+									<i class="ace-icon fa fa-bell-o"></i>
+									即时通讯连接提醒
+								</li>
+							</ul>
+						</li>
+
+						<li title="站内信" class="green" onclick="fhsms();" id="fhsmstss"><!-- fhsms()在 WebRoot\static\js\myjs\head.js中 -->
+							<a data-toggle="dropdown" class="dropdown-toggle" href="http://localhost:8080/#">
+								<i class="ace-icon fa fa-envelope icon-animated-vertical"></i>
+								<span class="badge badge-success" id="fhsmsCount">0</span>
+							</a>
+						</li>
+
+						<!-- #section:basics/navbar.user_menu -->
+						<li class="light-blue">
+							<a data-toggle="dropdown" class="dropdown-toggle" href="http://localhost:8080/#">
+								<img class="nav-user-photo" src="./泰慧保_files/user.jpg" alt="Jason&#39;s Photo" id="userPhoto">
+								<span class="user-info" id="user_info"><small>Welcome</small> mendian</span>
+								<i class="ace-icon fa fa-caret-down"></i>
+							</a>
+
+							<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+								<li>
+									<a onclick="editPhoto();" style="cursor:pointer;"><i class="ace-icon glyphicon glyphicon-picture"></i>修改头像</a><!-- editUserH()在 WebRoot\static\js\myjs\head.js中 -->
+								</li>
+								<li>
+									<a onclick="editUserH();" style="cursor:pointer;"><i class="ace-icon fa fa-user"></i>修改资料</a><!-- editUserH()在 WebRoot\static\js\myjs\head.js中 -->
+								</li>
+								<li id="systemset" style="display: none;">
+									<a onclick="editSys();" style="cursor:pointer;"><i class="ace-icon fa fa-cog"></i>系统设置</a><!-- editSys()在 WebRoot\static\js\myjs\head.js中 -->
+								</li>
+								<li class="divider"></li>
+								<li>
+									<a href="http://localhost:8080/logout"><i class="ace-icon fa fa-power-off"></i>退出登录</a>
+								</li>
+							</ul>
+						</li>
+
+						<!-- /section:basics/navbar.user_menu -->
+					</ul>
+				</div>
+				<!-- /section:basics/navbar.dropdown -->
+			</div><!-- /.navbar-container -->
+		</div>
+		<div id="fhsmsobj"><!-- 站内信声音消息提示 --></div>
+		<!-- /section:basics/navbar.layout -->
+		<div class="main-container" id="main-container">
+			<script type="text/javascript">
+				try{ace.settings.check('main-container' , 'fixed');}catch(e){}
+			</script>
+
+			<!-- #section:basics/sidebar -->
+			<!-- 左侧菜单 -->
+			<div id="sidebar" class="sidebar                  responsive" data-sidebar="true" data-sidebar-scroll="true" data-sidebar-hover="true">
+				<script type="text/javascript">
+					try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
+				</script>
+
+				<div class="sidebar-shortcuts" id="sidebar-shortcuts">
+					<div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
+						
+						<button class="btn btn-success" onclick="changeMenus(&#39;index&#39;);" title="业务菜单">
+							<i class="ace-icon fa fa-pencil"></i>
+						</button>
+						
+						<button class="btn btn-info" onclick="changeMenus(&#39;2&#39;);" title="系统菜单">
+							<i class="ace-icon fa fa-signal"></i>
+						</button>
+
+						<!-- #section:basics/sidebar.layout.shortcuts -->
+						<button class="btn btn-warning" onclick="changeMenus(&#39;3&#39;);" title="菜单(类型三)">
+							<i class="ace-icon fa fa-book"></i>
+						</button>
+
+						<button class="btn btn-danger" onclick="changeMenus(&#39;4&#39;);" title="菜单(类型四)">
+							<i class="ace-icon fa fa-cogs"></i>
+						</button>
+
+						<!-- /section:basics/sidebar.layout.shortcuts -->
+					</div>
+
+					<div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
+						<span class="btn btn-success"></span>
+
+						<span class="btn btn-info"></span>
+
+						<span class="btn btn-warning"></span>
+
+						<span class="btn btn-danger"></span>
+					</div>
+				</div><!-- /.sidebar-shortcuts -->
+
+				<ul class="nav nav-list" style="top: 0px;">
+					<li class="">
+						<a href="http://localhost:8080/main/index">
+							<i class="menu-icon fa fa-tachometer"></i>
+							<span class="menu-text">后台首页</span>
+						</a>
+						<b class="arrow"></b>
+					</li>
+
+
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+					<li class="active open" id="lm225">
+						<a style="cursor:pointer;" class="dropdown-toggle">
+							<i class="menu-icon fa fa-leaf black"></i>
+							<span class="menu-text">
+								门店管理
+							</span>
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+						<b class="arrow"></b>
+						
+						<ul class="submenu nav-show" style="display: block;">
+						
+							
+							<li class="active" id="z226">
+								<a style="cursor:pointer;" target="mainFrame" onclick="siMenu(&#39;z226&#39;,&#39;lm225&#39;,&#39;预约管理&#39;,&#39;ap_pointment_manager/list.do?new_request=true&#39;)">
+									<i class="menu-icon fa fa-leaf black"></i>
+										预约管理
+									
+								</a>
+								<b class="arrow"></b>
+								
+							</li>
+							
+						
+							
+							<li class="" id="z227">
+								<a style="cursor:pointer;" target="mainFrame" onclick="siMenu(&#39;z227&#39;,&#39;lm225&#39;,&#39;结算管理&#39;,&#39;settlement/list.do&#39;)">
+									<i class="menu-icon fa fa-leaf black"></i>
+										结算管理
+									
+								</a>
+								<b class="arrow"></b>
+								
+							</li>
+							
+						
+							
+							<li class="" id="z228">
+								<a style="cursor:pointer;" target="mainFrame" onclick="siMenu(&#39;z228&#39;,&#39;lm225&#39;,&#39;设置&#39;,&#39;shopsettings/list.do&#39;)">
+									<i class="menu-icon fa fa-leaf black"></i>
+										设置
+									
+								</a>
+								<b class="arrow"></b>
+								
+							</li>
+							
+						
+							
+							<li class="" id="z229">
+								<a style="cursor:pointer;" target="mainFrame" onclick="siMenu(&#39;z229&#39;,&#39;lm225&#39;,&#39;预约配置&#39;,&#39;shopappointment/show.do&#39;)">
+									<i class="menu-icon fa fa-leaf black"></i>
+										预约配置
+									
+								</a>
+								<b class="arrow"></b>
+								
+							</li>
+							
+						
+							
+							<li class="" id="z230">
+								<a style="cursor:pointer;" target="mainFrame" onclick="siMenu(&#39;z230&#39;,&#39;lm225&#39;,&#39;人员管理&#39;,&#39;person/list.do&#39;)">
+									<i class="menu-icon fa fa-leaf black"></i>
+										人员管理
+									
+								</a>
+								<b class="arrow"></b>
+								
+							</li>
+							
+						
+						</ul>
+						
+					</li>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+
+				</ul><!-- /.nav-list -->
+
+				<!-- #section:basics/sidebar.layout.minimize -->
+				<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+					<i class="ace-icon fa fa-angle-double-left" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+				</div>
+
+				<!-- /section:basics/sidebar.layout.minimize -->
+				<script type="text/javascript">
+					try{ace.settings.check('sidebar' , 'collapsed')}catch(e){}
+				</script>
+			</div>
+
+			<!-- /section:basics/sidebar -->
+			<div class="main-content">
+				<div class="main-content-inner">
+
+					<!-- /section:basics/content.breadcrumbs -->
+					<div class="page-content">
+						<!-- #section:settings.box -->
+						<div class="ace-settings-container" id="ace-settings-container">
+							<div class="btn btn-app btn-xs btn-warning ace-settings-btn" id="ace-settings-btn">
+								<i class="ace-icon fa fa-cog bigger-130"></i>
+							</div>
+
+							<div class="ace-settings-box clearfix" id="ace-settings-box">
+								<div class="pull-left width-50">
+									<!-- #section:settings.skins -->
+									<div class="ace-settings-item">
+										<div class="pull-left">
+											<select id="skin-colorpicker" class="hide">
+												<option data-skin="no-skin" value="#438EB9" selected="selected">#438EB9</option>
+												<option data-skin="skin-1" value="#222A2D">#222A2D</option>
+												<option data-skin="skin-2" value="#C6487E">#C6487E</option>
+												<option data-skin="skin-3" value="#D0D0D0">#D0D0D0</option>
+											</select><div class="dropdown dropdown-colorpicker">		<a data-toggle="dropdown" class="dropdown-toggle" href="http://localhost:8080/#"><span class="btn-colorpicker" style="background-color:#438EB9"></span></a><ul class="dropdown-menu dropdown-caret"><li><a class="colorpick-btn selected" href="http://localhost:8080/#" style="background-color:#438EB9;" data-color="#438EB9"></a></li><li><a class="colorpick-btn" href="http://localhost:8080/#" style="background-color:#222A2D;" data-color="#222A2D"></a></li><li><a class="colorpick-btn" href="http://localhost:8080/#" style="background-color:#C6487E;" data-color="#C6487E"></a></li><li><a class="colorpick-btn" href="http://localhost:8080/#" style="background-color:#D0D0D0;" data-color="#D0D0D0"></a></li></ul></div>
+										</div>
+										<span>&nbsp; 选择皮肤</span>
+									</div>
+
+									<!-- #section:settings.container -->
+									<div class="ace-settings-item">
+										<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-add-container">
+										<label class="lbl" for="ace-settings-add-container">
+											居中风格
+										</label>
+									</div>
+									<!-- #section:settings.container -->
+									<div class="ace-settings-item">
+										<label class="lbl" for="ace-settings-add-container">
+											<a title="关闭所有标签" class="btn btn-mini btn-warning" href="http://localhost:8080/main/index">关闭所有标签</a>
+										</label>
+									</div>
+
+									<!-- /section:settings.container -->
+								</div><!-- /.pull-left -->
+
+								<div class="pull-left width-50">
+
+									<!-- /section:basics/sidebar.options -->
+								</div><!-- /.pull-left -->
+							</div><!-- /.ace-settings-box -->
+						</div><!-- /.ace-settings-container -->
+						<div class="row">	
+						<div id="jzts" style="width: 100%; position: fixed; z-index: 99999999; display: none;">
+						<div class="commitopacity" id="bkbgjz" style="height: 555px;"></div>
+						<div class="jzts">
+							<div style="float: left;margin-top: 3px;"><img src="./泰慧保_files/loadingi.gif"> </div>
+							<div style="margin-top: 6px;"><h4 class="lighter block red">&nbsp;加载中 </h4></div>
+						</div>
+						</div>
+						<div>
+							<iframe name="mainFrame" id="mainFrame" frameborder="0" src="./泰慧保_files/tab.html" style="margin: 0px auto; width: 100%; height: 547px;"></iframe>
+						</div>
+						</div><!-- /.row -->	
+					</div><!-- /.page-content -->
+					
+				</div>
+			</div><!-- /.main-content -->
+
+		</div><!-- /.main-container -->
+
+		<!-- basic scripts -->
+		<!-- 页面底部js¨ -->
+				
+		<!--[if !IE]> -->
+		<script type="text/javascript">
+			window.jQuery || document.write("<script src='http://localhost:8080/static/ace/js/jquery.js'>"+"<"+"/script>");
+		</script><script src="./泰慧保_files/jquery.js.download"></script>
+		<!-- <![endif]-->
+		<!--[if IE]>
+		<script type="text/javascript">
+		 window.jQuery || document.write("<script src='http://localhost:8080/static/ace/js/jquery1x.js'>"+"<"+"/script>");
+		</script>
+		<![endif]-->
+		<script type="text/javascript">
+			if('ontouchstart' in document.documentElement) document.write("<script src='http://localhost:8080/static/ace/js/jquery.mobile.custom.js'>"+"<"+"/script>");
+		</script>
+		<script src="./泰慧保_files/bootstrap.js.download"></script>
+		
+		<!-- page specific plugin scripts -->
+
+		<!-- ace scripts -->
+		<script src="./泰慧保_files/elements.scroller.js.download"></script>
+		<script src="./泰慧保_files/elements.colorpicker.js.download"></script>
+		<script src="./泰慧保_files/elements.fileinput.js.download"></script>
+		<script src="./泰慧保_files/elements.typeahead.js.download"></script>
+		<script src="./泰慧保_files/elements.wysiwyg.js.download"></script>
+		<script src="./泰慧保_files/elements.spinner.js.download"></script>
+		<script src="./泰慧保_files/elements.treeview.js.download"></script>
+		<script src="./泰慧保_files/elements.wizard.js.download"></script>
+		<script src="./泰慧保_files/elements.aside.js.download"></script>
+		<script src="./泰慧保_files/ace.js.download"></script>
+		<script src="./泰慧保_files/ace.ajax-content.js.download"></script>
+		<script src="./泰慧保_files/ace.touch-drag.js.download"></script>
+		<script src="./泰慧保_files/ace.sidebar.js.download"></script>
+		<script src="./泰慧保_files/ace.sidebar-scroll-1.js.download"></script>
+		<script src="./泰慧保_files/ace.submenu-hover.js.download"></script>
+		<script src="./泰慧保_files/ace.widget-box.js.download"></script>
+		<script src="./泰慧保_files/ace.settings.js.download"></script>
+		<script src="./泰慧保_files/ace.settings-rtl.js.download"></script>
+		<script src="./泰慧保_files/ace.settings-skin.js.download"></script>
+		<script src="./泰慧保_files/ace.widget-on-reload.js.download"></script>
+		<script src="./泰慧保_files/ace.searchbox-autocomplete.js.download"></script>
+		<!-- inline scripts related to this page -->
+
+		<!-- the following scripts are used in demo only for onpage help and you don't need them -->
+		<link rel="stylesheet" href="./泰慧保_files/ace.onpage-help.css">
+
+		<script type="text/javascript"> ace.vars['base'] = '..'; </script>
+		<script src="./泰慧保_files/elements.onpage-help.js.download"></script>
+		<script src="./泰慧保_files/ace.onpage-help.js.download"></script>
+	
+		<!--引入属于此页面的js -->
+		<script type="text/javascript" src="./泰慧保_files/head.js.download"></script>
+		<script type="text/javascript" src="./泰慧保_files/index.js.download"></script>
+		<script type="text/javascript" src="./泰慧保_files/setSkin.js.download"></script>
+		
+		<!--引入弹窗组件1start-->
+		<!--<script type="text/javascript" src="plugins/attention/zDialog/zDrag.js"></script>-->
+		<!--<script type="text/javascript" src="plugins/attention/zDialog/zDialog.js"></script>-->
+		<!--引入弹窗组件1end-->
+		
+		<!--引入弹窗组件2start-->
+		<script type="text/javascript" src="./泰慧保_files/drag.js.download"></script>
+		<script type="text/javascript" src="./泰慧保_files/dialog.js.download"></script>
+		<link type="text/css" rel="stylesheet" href="./泰慧保_files/style.css">
+		<!--引入弹窗组件2end-->
+		
+		<!--提示框-->
+		<script type="text/javascript" src="./泰慧保_files/jquery.tips.js.download"></script>
+		
+		<script type="text/javascript">
+			setSkin("no-skin");//用户的皮肤
+		</script>
+		
+		<!-- 及时通讯js¨ -->
+		<script src="./泰慧保_files/layui.js.download"></script>
+		<!-- 及时通讯页面¨ -->
+		
+
+
+<script>
+
+layui.config({
+	  base: 'plugins/fhim/dist/js/' //扩展 JS 所在目录
+	}).extend({
+		readyMenu: 'readyMenu'
+	});
+
+var websocket = null;	//websocket对象
+function connectWebSocket_RockJiang(){ //add by RockJiang because 'wimadress' not init
+	if(wimadress == ''){
+		setTimeout(connectWebSocket_RockJiang, 500);
+		return;
+	}
+	websocket = new WebSocket(encodeURI('ws://'+wimadress)); //wimadress参数在 static/js/myjs/head.js 中定义并赋值
+	websocket.onopen = function() {
+		$("#myIm").tips({
+			side:3,
+			msg:'即时通讯已连接成功',
+			bg:'#AE81FF',
+			time:10
+		});
+		websocket.send(',fhadmin-join,'+user); 	//发送上线消息(把上线状态发送给好友，对方好友栏目本头像从黑白色变彩色)(前提条件：本身在线状态设置为在线状态，否则对方看到的依然是离线状态)
+	};
+	websocket.onerror = function() { 			//连接失败
+		$("#myIm").tips({
+			side:3,
+			msg:'连接发生错误,刷新或者更换浏览器试试',
+			bg:'#AE81FF',
+			time:10
+		});
+	};
+	websocket.onclose = function() {			//连接断开
+		$("#myIm").tips({
+			side:3,
+			msg:'已经断开连接',
+			bg:'#AE81FF',
+			time:10
+		});
+		websocket.send(',fhadmin-leave,');		//发送下线消息
+	};
+	websocket.onmessage = function(message) {	//消息接收
+		var message = JSON.parse(message.data);
+		if('friend' == message.type || 'group' == message.type){ //接收好友或群发送的消息
+			getFHMessage(message);
+		}else if('user_join' == message.type){
+			friendOnline(message.user);
+			$("#myIm").tips({
+				side:3,
+				msg:"好友"+message.name+'上线了',
+				bg:'#AE81FF',
+				time:5
+			});
+		}else if('user_leave' == message.type){
+			friendOffline(message.user);
+			$("#myIm").tips({
+				side:3,
+				msg:"好友"+message.name+'下线了',
+				bg:'#FFA500',
+				time:5
+			});
+		}else if('user_online' == message.type){
+			friendOnline(message.user);		//好友设置在线状态
+		}else if('user_hide' == message.type){
+			friendOffline(message.user);	//好友设置隐身状态
+		}else if('user_applyfriend' == message.type){
+			applyIFriend();					//申请加好友
+		}else if('user_emove' == message.type){
+			removeFriend(message.user);		//删除好友(被动删，被拉黑)
+		}else if('agreefriend' == message.type){
+			addFriend(message);				//对方同意添加好友
+		}else if('applyqgroup' == message.type){
+			applyIQgroup();					//申请加群申请
+		}else if('agreeqgroup' == message.type){
+			addIQgroup(message);			//对方同意群申请
+		}else if('kickoutqgroup' == message.type){
+			kickoutIQgroup(message.id);		//踢出群
+		}else if('delqgroup' == message.type){
+			delQgroup(message.QGROUP_ID);	//群解散
+			$("#myIm").tips({
+				side:3,
+				msg:message.CONTENT,
+				bg:'#AE81FF',
+				time:5
+			});
+		}
+	};
+}
+
+layui.use(['layim','readyMenu'], function(layim){
+	
+	if (window.WebSocket) {
+		connectWebSocket_RockJiang();
+	}else{
+		$("#myIm").tips({
+			side:3,
+            msg:'此浏览器不支持websocket,请用支持HTML5的浏览器或者使用最新谷歌、火狐、360等浏览器',
+            bg:'#AE81FF',
+            time:10
+ 		});
+	}
+	
+	$.ajax({
+		type: "POST",
+		url: 'iminterface/getImsign.do',	//获取皮肤
+    	data: {tm:new Date().getTime()},
+		dataType:'json',
+		cache: false,
+		success: function(data){
+			  /*基础配置*/
+			  layim.config({
+			    init: {
+			      url: 'iminterface/getList'			//初始化接口
+			      ,data: {}
+			    }
+			    ,members: {
+			      url: 'iminterface/getMembers'			//查看群员接口
+			      ,data: {}
+			    }
+			    ,uploadImage: {
+			      url: 'iminterface/updateImg'			//上传图片接口
+			      ,type: 'post' 						//默认post
+			    } 
+			    
+			    ,uploadFile: {
+			      url: 'iminterface/updateFile'			//上传文件接口
+			      ,type: 'post' 						//默认post
+			    }
+			    ,isAudio: true 							//开启聊天工具栏音频
+			    ,isVideo: true 							//开启聊天工具栏视频
+			    /**扩展工具栏*/
+			    ,tool: [{
+			      alias: 'code'
+			      ,title: '代码'
+			      ,icon: '&#xe64e;'
+			    }]
+			    //,brief: true 						//是否简约模式（若开启则不显示主面板）
+			    ,title: '我的通讯' 					//自定义主面板最小化时的标题
+			    //,right: '100px' 					//主面板相对浏览器右侧距离
+			    //,minRight: '90px' 				//聊天面板最小化时相对浏览器右侧距离
+			    ,initSkin: data.imsign	 			//1-5 设置初始背景
+			    //,skin: ['aaa.jpg'] 				//新增皮肤
+			    //,isfriend: false 					//是否开启好友
+			    //,isgroup: false 					//是否开启群组
+			    //,min: true 						//是否始终最小化主面板，默认false
+			    ,notice: true 						//是否开启桌面消息提醒，默认false
+			    //,voice: false 					//声音提醒，默认开启，声音文件为：default.mp3
+			    ,msgbox: 'iminterface/msgbox.do' 	//消息盒子页面地址，若不开启，剔除该项即可
+			    ,find: 'friends/goAdd.do' 			//发现页面地址，若不开启，剔除该项即可
+			    ,chatLog: 'hismsg/himsglist.do' 	//聊天记录页面地址，若不开启，剔除该项即可
+			    
+			  });
+		}
+	});
+  
+  layim.on('online', function(data){			//监听在线状态的切换事件
+    console.log(data);
+    websocket.send(',fhadmin-'+data+','+user);	//发送在线隐身消息
+	$.ajax({
+		type: "POST",
+		url: 'iminterface/editState.do',
+    	data: {ONLINE:data,TYPE:"online",tm:new Date().getTime()},
+		dataType:'json',
+		cache: false,
+		success: function(data){}
+	});
+  });
+  
+  layim.on('sign', function(data){				//监听签名修改
+    console.log(data);
+	$.ajax({
+		type: "POST",
+		url: 'iminterface/editState.do',
+    	data: {AUTOGRAPH:data,TYPE:"auto",tm:new Date().getTime()},
+		dataType:'json',
+		cache: false,
+		success: function(data){}
+	});
+  });
+
+  layim.on('setSkin', function(filename, src){	//监听更换背景皮肤
+	  console.log(filename); 					//获得文件名 	如：1.jpg
+	  console.log(src); 						//获得背景路径
+		$.ajax({
+			type: "POST",
+			url: 'iminterface/editState.do',
+		   	data: {SIGN:filename,TYPE:"sign",tm:new Date().getTime()},
+			dataType:'json',
+			cache: false,
+			success: function(data){}
+		});
+	}); 
+  
+  layim.on('tool(code)', function(insert){		//监听自定义工具栏点击，以添加代码为例
+    layer.prompt({
+      title: '插入代码'
+      ,formType: 2
+      ,shade: 0
+    }, function(text, index){
+      layer.close(index);
+      insert('[pre class=layui-code]' + text + '[/pre]'); //将内容插入到编辑器
+    });
+  });
+  
+  /*监听layim建立就绪*/
+  layim.on('ready', function(res){
+	layui.readyMenu.init(); 					//更新右键点击事件
+	$.ajax({
+		type: "POST",
+		url: 'iminterface/getMsgCount.do',		//未读消息(加好友群等)总数
+    	data: {tm:new Date().getTime()},
+		dataType:'json',
+		cache: false,
+		success: function(data){
+			if('01' == data.result){
+				layim.msgbox(data.count); 		//消息盒子有新消息
+			}
+		}
+	});
+	$.ajax({
+		type: "POST",
+		url: 'iminterface/getNoreadMsg.do',		//未读消息(离线消息)接口
+    	data: {tm:new Date().getTime()},
+		dataType:'json',
+		cache: false,
+		success: function(data){
+			if('has' == data.result){
+				$.each(data.list, function(i, list){
+					layim.getMessage({
+						  username: list.NAME 		//消息来源用户名
+						  ,avatar: list.PHOTO 		//消息来源用户头像
+						  ,id: list.USERNAME 		//消息的来源ID（如果是私聊，则是用户id，如果是群聊，则是群组id）
+						  ,type: "friend" 			//聊天窗口来源类型，从发送消息传递的to里面获取
+						  ,content: list.CONTENT 	//消息内容
+						  ,timestamp:list.CTIME
+					});
+				 });
+			}
+		}
+	});
+	
+  });
+  
+  //接收到好友或群的消息
+  function getFHMessage(data){
+	 layim.getMessage(data);
+  }
+  
+  //接收到好友上线消息，头像取消置灰
+  function friendOnline(id){
+	  layim.setFriendStatus(id, 'online'); //设置指定好友在线，即头像取消置灰
+  }
+  
+  //接收到好友下线消息，头像置灰
+  function friendOffline(id){
+	  layim.setFriendStatus(id, 'offline'); //设置指定好友下线，即头像置灰
+  }
+  
+  //申请好友消息
+  function applyIFriend(){
+	  layim.msgbox('新');
+	  $("#fhsmsobj").html('<audio style="display: none;" id="fhsmstsy" src="static/sound/'+TFHsmsSound+'.mp3" autoplay controls></audio>');
+  }
+  
+  //申请加群消息
+  function applyIQgroup(){
+	  layim.msgbox('新');
+	  $("#fhsmsobj").html('<audio style="display: none;" id="fhsmstsy" src="static/sound/'+TFHsmsSound+'.mp3" autoplay controls></audio>');
+  }
+  
+  //踢出消息
+  function kickoutIQgroup(QGROUP_ID){
+	  layui.layim.removeList({
+		  type: 'group' 
+		  ,id: QGROUP_ID //群ID
+		});
+	  layim.msgbox('新');
+	  $("#fhsmsobj").html('<audio style="display: none;" id="fhsmstsy" src="static/sound/'+TFHsmsSound+'.mp3" autoplay controls></audio>');
+  }
+
+  //删除好友(被对方拉黑)
+  function removeFriend(FUSERNAME){
+	  layim.removeList({
+		  type: 'friend' //或者group
+		  ,id: FUSERNAME //好友用户名
+		});
+  }
+  
+  //对方同意添加好友(加入好友栏目)
+  function addFriend(message){
+	  layim.addList({
+		  type: 'friend' 				//列表类型，只支持friend和group两种
+		  ,avatar: message.avatar 		//好友头像
+		  ,username: message.username	//好友昵称
+		  ,groupid: message.groupid		//所在的分组id
+		  ,id: message.id 				//好友id
+		  ,status: message.status 		//在线状态
+		  ,sign: message.sign		 	//好友签名
+	  });
+	  layim.msgbox('新');
+	  $("#fhsmsobj").html('<audio style="display: none;" id="fhsmstsy" src="static/sound/'+TFHsmsSound+'.mp3" autoplay controls></audio>');
+	  layui.readyMenu.init(); 			//更新右键点击事件
+  }
+  
+  //对方同意添群(加入群组栏目)
+  function addIQgroup(message){
+	  layim.addList({
+		  type: 'group' 					//列表类型，只支持friend和group两种
+		  ,avatar: message.avatar			//群组头像
+		  ,groupname: message.groupname 	//群组名称
+		  ,id: message.id 					//群组id
+	  });
+	  layim.msgbox('新');
+	  $("#fhsmsobj").html('<audio style="display: none;" id="fhsmstsy" src="static/sound/'+TFHsmsSound+'.mp3" autoplay controls></audio>');
+  }
+  
+  //群解散
+  function delQgroup(QGROUP_ID){
+	  layui.layim.removeList({
+		  type: 'group' 
+		  ,id: QGROUP_ID //群ID
+		});
+	  layim.msgbox('新');
+	  $("#fhsmsobj").html('<audio style="display: none;" id="fhsmstsy" src="static/sound/'+TFHsmsSound+'.mp3" autoplay controls></audio>');
+  }
+  
+  //监听发送消息
+  layim.on('sendMessage', function(data){
+	layer.closeAll('loading');
+    var To = data.to;		//当前用户资料
+    var mine = data.mine; 	//发送者数据(消息内容以及发送者资料)
+    /** 
+     *	user:发送者用户名
+	 *	uname：发送者用户姓名
+	 *	To.id：对方用户名
+	 *	To.type：消息类型 group or friend
+	 *	mine.avatar:发送者用户头像
+	 *	mine.content：消息内容
+	 */
+	 websocket.send(",fhadmin-msg,"+user+",fh,"+uname+",fh,"+To.id+",fh,"+To.type+",fh,"+mine.avatar+",fh,"+mine.content);
+  });
+
+  //监听群员
+  layim.on('members', function(data){
+    console.log(data);
+  });
+  
+  //监听聊天窗口的切换
+  layim.on('chatChange', function(res){
+    var type = res.data.type;
+    console.log(res.data.id);
+    if(type === 'friend'){
+    } else if(type === 'group'){
+    }
+  });
+
+});
+
+//从自己好友栏删除好友
+function removeFriendByI(FUSERNAME){
+  layui.layim.removeList({
+	  type: 'friend' 
+	  ,id: FUSERNAME //好友用户名
+	});
+}
+
+//从对方好友栏里面删除自己
+function removeIFromFriend(FUSERNAME){
+	websocket.send(',fhadmin-remove,'+user+',fh,'+FUSERNAME); 
+}
+
+//从自己手机好友栏里面删除对方
+function removeFriendFromMobile(FUSERNAME){
+	websocket.send(',fhadmin-remove,'+FUSERNAME+',fh,'+user); 
+}
+
+//退出群
+function removeQgroup(QGROUP_ID,TYPE){
+  layui.layim.removeList({
+	  type: 'group' 
+	  ,id: QGROUP_ID //群ID
+	});
+  if('del'==TYPE){
+ 	websocket.send(',fhadmin-delqgroup,'+QGROUP_ID); 	//解散群，通知所有群成员
+  }else{
+	websocket.send(',fhadmin-applyqgroup,'+QGROUP_ID);  //申请群和退群，都是通知群主，此函数可共用一个
+  }
+}
+
+//新建群时，把群添加到群组栏里面
+function addQgroup(id,avatar,groupname){
+	layui.layim.addList({
+		type: 'group' 			//列表类型
+	  	,avatar: avatar 		//群组头像
+	  	,groupname: groupname 	//群组名称
+	  	,id: id					//群组id
+	});
+}
+
+//同意对方申请好友，发送同意信息给对方
+function agreeFriend(FUSERNAME){
+	websocket.send(',fhadmin-agreefriend,'+user+",fh,"+FUSERNAME);
+}
+
+//同意对方申请加群，发送同意信息给对方
+function agreeQgroup(uid,group){
+	websocket.send(',fhadmin-agreeqgroup,'+uid+",fh,"+group);
+}
+
+//踢出群，发踢出信息给对方
+function kickoutQgroup(uid,group){
+	websocket.send(',fhadmin-kickoutqgroup,'+uid+",fh,"+group);
+}
+
+//申请好友，发送消息
+function applyFriend(uid){
+	websocket.send(',fhadmin-applyfriend,'+uid);
+}
+
+//申请加群，发送消息
+function applyQgroup(QGROUP_ID){
+	websocket.send(',fhadmin-applyqgroup,'+QGROUP_ID);
+}
+
+</script>
+
+
+
+
+
+<!-- f-h-admin-QQ3-13-5-96-790 -->
+		
+	
+<div class="layui-layer layui-layer-page layui-box layui-layim layer-anim layer-anim-02" id="layui-layer1" type="page" times="1" showtime="0" contype="string" style="z-index: 19891015; width: 260px; height: 520px; top: 74px; left: 1087px; background-image: url(&quot;http://localhost:8080/plugins/fhim/dist/css/modules/layim/skin/5.jpg&quot;); display: none;"><div class="layui-layer-title" style="cursor: move;">​</div><div id="layui-layim" class="layui-layer-content" style="height: 410px;"><div class="layui-layim-main"><div class="layui-layim-info"><div class="layui-layim-user">mendian</div><div class="layui-layim-status"><span class="layui-icon layim-status-online" layim-event="status" lay-type="show"></span><ul class="layui-anim layim-menu-box"><li class="layim-this" layim-event="status" lay-type="online"><i class="layui-icon"></i><cite class="layui-icon layim-status-online"></cite>在线</li><li layim-event="status" lay-type="hide"><i class="layui-icon"></i><cite class="layui-icon layim-status-hide"></cite>隐身</li></ul></div><input class="layui-layim-remark" placeholder="编辑签名" value="个性签名"></div><ul class="layui-unselect layui-layim-tab"><li class="layui-icon layim-this" title="联系人" layim-event="tab" lay-type="friend"></li><li class="layui-icon" title="群组" layim-event="tab" lay-type="group"></li><li class="layui-icon" title="历史会话" layim-event="tab" lay-type="history"></li></ul><ul class="layui-unselect layim-tab-content layui-show layim-list-friend"><li><ul class="layui-layim-list layui-show"><li class="layim-null">暂无联系人</li></ul></li></ul><ul class="layui-unselect layim-tab-content "><li><ul class="layui-layim-list layui-show layim-list-group"><li class="layim-null">暂无群组</li></ul></li></ul><ul class="layui-unselect layim-tab-content "><li><ul class="layui-layim-list layui-show layim-list-history"><li class="layim-null">暂无历史会话</li></ul></li></ul><ul class="layui-unselect layim-tab-content"><li><ul class="layui-layim-list layui-show" id="layui-layim-search"></ul></li></ul><ul class="layui-unselect layui-layim-tool"><li class="layui-icon layim-tool-search" layim-event="search" title="搜索"></li><li class="layui-icon layim-tool-msgbox" layim-event="msgbox" title="消息盒子"><span class="layui-anim"></span></li><li class="layui-icon layim-tool-find" layim-event="find" title="查找"></li><li class="layui-icon layim-tool-skin" layim-event="skin" title="更换背景"></li></ul><div class="layui-layim-search"><input><label class="layui-icon" layim-event="closeSearch">ဇ</label></div></div></div><span class="layui-layer-setwin"><a class="layui-layer-ico layui-layer-close layui-layer-close1" href="javascript:;"></a></span></div><div class="layui-layer-move"></div><div class="layui-layer layui-layer-page layui-box layui-layim-min layui-layim-close" id="layui-layer2" type="page" times="2" showtime="0" contype="string" style="z-index: 19891016; top: 544px; left: 1203px;"><div id="layui-layim-close" class="layui-layer-content"><img src="./泰慧保_files/user.jpg" style="cursor: move;"><span>我的通讯</span></div><span class="layui-layer-setwin"></span></div><style id="jquery_tips_style" type="text/css">.jq_tips_box{padding:10px;position:absolute;overflow:hidden;display:inline;display:none;z-index:10176523;}.jq_tips_arrow{display:block;width:0px;height:0px;position:absolute;}.jq_tips_top{border-left:10px solid transparent;left:20px;bottom:0px;}.jq_tips_left{border-top:10px solid transparent;right:0px;top:18px;}.jq_tips_bottom{border-left:10px solid transparent;left:20px;top:0px;}.jq_tips_right{border-top:10px solid transparent;left:0px;top:18px;}.jq_tips_info{word-wrap: break-word;word-break:normal;border-radius:4px;padding:5px 8px;max-width:130px;overflow:hidden;box-shadow:1px 1px 1px #999;font-size:12px;cursor:pointer;}</style><div id="_DialogBGDiv" style="position: absolute; left: 0px; top: 0px; width: 100%; height: 596px; z-index: 900; display: none;"><div style="position:relative;width:100%;height:100%;"><div id="_DialogBGMask" style="position: absolute; width: 100%; height: 100%; opacity: 0.4; background-color: rgb(51, 51, 51);"></div></div></div></body></html>
